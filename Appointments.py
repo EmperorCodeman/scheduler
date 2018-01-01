@@ -3,7 +3,7 @@ def encodeAppointments(appointments):
     #express appointments as intervals over time line
     for i, appointment in enumerate(appointments):
         appointments[i] = [encode(appointment[0]),encode(appointment[1])]
-    appointments.sort(key=lambda x:x[1])
+    appointments.sort(key=lambda x:x[0])
     appointmentIntervals = []
     alreadyProccessed = []
     for i, appointment in enumerate(appointments):
