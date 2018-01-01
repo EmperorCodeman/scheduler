@@ -1,11 +1,12 @@
 from unitType import encode, decode, Unit
-def encodeAppointements(appointments):
+def encodeAppointments(appointments):
     #express appointments as intervals over time line
     for i, appointment in enumerate(appointments):
         appointments[i] = [encode(appointment[0]),encode(appointment[1])]
+    appointments.sort(key=lambda x:x[1])
     appointmentIntervals = []
     alreadyProccessed = []
-    for i, appointment in enumerate(appointments[:len(appointments)-1]):
+    for i, appointment in enumerate(appointments):
         startBlock, endBlock = appointment[0], appointment[1]
         if alreadyProccessed.__contains__([startBlock,endBlock]):
             continue#prevent duplication

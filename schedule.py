@@ -1,10 +1,10 @@
 from unitType import encode
-from Appointments import encodeAppointements, encodeAvailability, encodeOpenings, decodeOpenings
+from Appointments import encodeAppointments, encodeAvailability, encodeOpenings, decodeOpenings
 def team_availability(appointments):
     lunch = ["12:00","1:00"]
     appointments.append(lunch)
     #express appointments as intervals over time line
-    appointments = encodeAppointements(appointments)
+    appointments = encodeAppointments(appointments)
     startOfDay, endOfDay = encode("8:30"), encode("5:00")
     #express availability as intervals over time segment
     availability = encodeAvailability(appointments, startOfDay, endOfDay)

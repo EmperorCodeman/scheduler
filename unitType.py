@@ -6,7 +6,7 @@ def encode(time):
     halfHours += minutes // 30
     minutes -= (minutes//30) * 30
     #convert to military time
-    if int(hours) < 8:#if pm as infered by context
+    if int(hours) < 8:#if pm as inferred by context
         halfHours += 2*12
     #reduce demensions of unit
         #possible because time forms a line with minutes and smaller frames of time expressed in decimal range
@@ -41,6 +41,5 @@ class Unit:
         resultMin = minutes - otherMin
         if resultMin < 0:
             resultHalf -= 1
-            resultMin += 30
+            resultMin += .30
         return resultHalf + resultMin
-
