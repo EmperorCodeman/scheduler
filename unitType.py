@@ -19,7 +19,7 @@ def decode(time):
     if hours == "0":
         hours = "12"
     while len(minutes) < 2:
-        minutes += "0"
+        minutes = "0" + minutes
     return hours+":"+minutes
 class Unit:
     # continuous scaler with hybrid numeral system
